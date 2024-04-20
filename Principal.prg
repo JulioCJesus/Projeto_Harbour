@@ -5,7 +5,7 @@ function Main()
     hb_cdpSelect("UTF8")
     ? "Estou no main v2"
        
-    oPerson := Person():New( "Cesar", "Luz", "Cancêr", "1.82", "80" )
+    oPerson := Person():New( "Cesar", "Luz", "Câncer", "1.82", "80" )
     oPerson:nDtNasc := CTOD( "24/06/1997" )
     //oPerson := Person():Number( 1.82, 80)
     
