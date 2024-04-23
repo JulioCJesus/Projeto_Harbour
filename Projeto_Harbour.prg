@@ -2,37 +2,43 @@
 CLASS Person
 
   DATA cNome, cSobrenome, cSigno
-  DATA nDtNasc, nIdade, nAltura, nPeso
+  DATA nDtNasc, nAltura, nPeso, nIdade
 
-  METHOD New( cNome, cSobrenome, cSigno, nAltura, nPeso )
-  METHOD Idade ()
-  //METHOD Number( nAltura, nPeso)
+  METHOD New()
+  METHOD Imprim()
 
 ENDCLASS
 
-METHOD New( cNome, cSobrenome, cSigno, nAltura, nPeso )
+METHOD New( ) class Person
 
-::cNome := cNome
-::cSobrenome := cSobrenome
-::cSigno := cSigno
-::nAltura := nAltura
-::nPeso := nPeso
+  CLS
+  ACCEPT "Digite o nome: " TO ::cNome
+  ACCEPT "Digite o Sobrenome: " TO ::cSobrenome
+  ACCEPT "Digite o Signo: " TO ::cSigno
+  ACCEPT "Digite sua altura: " TO ::nAltura
+  ACCEPT "Digite seu peso: " TO ::nPeso
+  ACCEPT "Digite a data de nascimento: " TO ::nDtNasc
 
-RETURN Self
-/*METHOD Number( nAltura, nPeso )
+  ::nDtNasc:= CToD(::nDtNasc)
+  ::nIdade:= INT ((date() - ::nDtNasc)/365)
 
-  ::nAltura := nAltura
-  ::nPeso := nPeso
+RETURN 
+METHOD Imprim() class Person
+  CLS
+  ?"Seu nome é: ", ::cNome, ::cSobrenome 
+  ?"Seu signo é de : ",::cSigno 
+  ?"Você tem ",::nAltura, " de altura."
+  ?"Tem ", ::nPeso , "kg."
+  IF ::nIdade > 1
+    ?"E tem ",::nIdade, "anos."
+  ELSEIF ::nIdade = 1
+    ?"E tem",::nIdade, "ano."
+  ELSE
+    ?"E tem",::nIdade, "ano."
+  ENDIF
+
   
-  RETURN Self*/
-
-METHOD Idade()
-
-  ? date() - ::nDtNasc, "dias"
-  ? ( date() - ::nDtNasc ) / 365, "anos"
-  ? INT( ( date() - ::nDtNasc ) / 365 ), "anos"
-
-RETURN
+RETURN 
 
 
 

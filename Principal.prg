@@ -1,23 +1,17 @@
 function Main()
 
-    SET DATE BRIT
+LOCAL print
+
+    SET DATE BRITiSH
     SET CENT ON
     hb_cdpSelect("UTF8")
-    ? "Estou no main v2"
-       
-    oPerson := Person():New( "Cesar", "Luz", "Câncer", "1.82", "80" )
-    oPerson:nDtNasc := CTOD( "24/06/1997" )
-    //oPerson := Person():Number( 1.82, 80)
-    
-    
-    ? oPerson:cNome
-    ? oPerson:cSobrenome
-    ? oPerson:cSigno
-    ? oPerson:nPeso
-    ? oPerson:nAltura
-    
-    oPerson:Idade()
+      
+    print:= Person()
+
+    print:New()
+
+    print:Imprim()
     
     //? WAPI_GETCURRENTPROCESSID()
     INKEY(0)
-    
+RETURN    
